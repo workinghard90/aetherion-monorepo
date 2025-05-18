@@ -1,1 +1,21 @@
-
+# FILE: package.json
+{
+  "name": "aetherion-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "echo Choose specific service/app",
+    "start:expo": "yarn workspace aetherion-mobile start",
+    "start:backend": "cd services/backend && flask run",
+    "build": "yarn workspaces run build",
+    "test": "jest",
+    "clean": "manypkg clean"
+  },
+  "devDependencies": {
+    "manypkg": "^1.0.0"
+  }
+}
